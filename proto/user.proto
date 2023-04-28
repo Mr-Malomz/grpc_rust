@@ -6,15 +6,15 @@ service UserService {
     rpc CreateUser (CreateUserRequest) returns (CreateUserResponse);
     rpc UpdateUser (UpdateUserRequest) returns (UpdateUserResponse);
     rpc DeleteUser (DeleteUserRequest) returns (DeleteUserResponse);
-    rpc GellAllUsers (Empty) returns (GellAllUsersResponse);
+    rpc GetAllUsers (Empty) returns (GetAllUsersResponse);
 }
 
 message UserRequest {
-    string _id = 1;
+    string id = 1;
 }
 
 message UserResponse {
-    string _id = 1;
+    string id = 1;
     string name = 2;
     string location = 3;
     string title = 4;
@@ -42,7 +42,7 @@ message UpdateUserResponse {
 }
 
 message DeleteUserRequest {
-    string _id = 1;
+    string id = 1;
 }
 
 message DeleteUserResponse {
@@ -51,6 +51,6 @@ message DeleteUserResponse {
 
 message Empty {}
 
-message GellAllUsersResponse {
+message GetAllUsersResponse {
     repeated UserResponse users = 1;
 }
